@@ -32,7 +32,7 @@ class Transaction {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @ManyToOne(() => Category, 'transactions')
+  @ManyToOne(() => Category, category => category.transactions, { eager: true })
   @JoinColumn({ name: 'category_id' })
   category: Category;
 }

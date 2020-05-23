@@ -22,7 +22,7 @@ class Category {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @OneToMany(() => Transaction, 'category')
+  @OneToMany(() => Transaction, transaction => transaction.category)
   transactions: Transaction[];
 }
 
